@@ -1,7 +1,8 @@
 ﻿#include <stdio.h>
 #include <math.h>
 
-double reshenie(double x, double y, double z) {
+//функция вычисления значения имходного выражения
+int reshenie(double x, double y, double z) {
 	double w, w_1, w_2;
 	w_1 = fabs(cos(x) - cos(y));
 	w_2 = 1 + 2 * pow(sin(y), 2);
@@ -10,7 +11,8 @@ double reshenie(double x, double y, double z) {
 	return 0;
 }
 
-double vvod() {
+// функция обработки ввода 
+int vvod() {
 	double x, y, z;
 	printf("Vvedite x, y, z: \n");
 	if (scanf_s("%lf %lf %lf", &x, &y, &z) != 3) {
@@ -25,10 +27,14 @@ double vvod() {
 // 4000 -0.875 -0.000475	
 int main()
 {
-	int flag;
+	int flag, result;
+
 
 	printf("Vvedite chislo: \n");
-	scanf_s("%d", &flag);
+	if (scanf_s("%d", &flag) != 1) {
+		printf("Error\n");
+		return 0;
+	}
 
 	switch (flag) {
 	case 21:
